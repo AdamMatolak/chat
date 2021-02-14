@@ -32,11 +32,11 @@ public class Database {
     public void test() {
         try{
             Connection con = getConnection();
-            if (con == null) System.out.println("PROBLEMOS");
-            else System.out.println("SAXESSS");
+            if (con == null) System.out.println("problem");
+            else System.out.println("success");
             con.close();
         }catch (Exception e) {
-            System.out.println("dajaky problem s otestovanim pripojenia");
+            System.out.println("problem with test of connection");
             e.printStackTrace();
         }
     }
@@ -65,7 +65,7 @@ public class Database {
             }
 
         }catch (Exception e){
-            System.out.println("už existuje taký user");
+            System.out.println("user already exists");
             e.printStackTrace();
         }
         return true;
@@ -92,7 +92,7 @@ public class Database {
                 return user;
             }else {
                 con.close();
-                System.out.println("incorect credintials!!!!!");
+                System.out.println("incorrect credintials");
                 return null;
             }
 
@@ -112,7 +112,7 @@ public class Database {
         try {
             Connection con = getConnection();
             if(con==null){
-                System.out.println("ajajaj");
+                System.out.println("problem appeared");
                 return false;
             }
             PreparedStatement ps=con.prepareStatement(newMessage);
@@ -123,11 +123,11 @@ public class Database {
             con.close();
 
             if(result<1){
-                System.out.println("SPRAVA NEBOLA ODOSLANA");
+                System.out.println("message not sent");
                 return false;
             }
             else{
-                System.out.println("SPRAVA ODOSLANA");
+                System.out.println("message sent");
                 return true;
             }
         }catch(Exception ex){
@@ -154,17 +154,17 @@ public class Database {
             {
                 int id = rs.getInt("id");
                 con.close();
-                System.out.println("SAXESS you reached the ID");
+                System.out.println("success, you reached the ID");
                 return (int) id;
 
             }else {
                 con.close();
-                System.out.println("The user with this LOGIN doesnt EXIST");
+                System.out.println("The user with this login doesn't exist");
                 return -1;
             }
 
         }catch (Exception e){
-            System.out.println("dajaký problem S GETuserID metodou");
+            System.out.println("problem with GETuserID method");
             e.printStackTrace();
         }
 
@@ -175,7 +175,7 @@ public class Database {
 
         int Idecko = getUserId(login);
         if(Idecko==-1){
-            System.out.println("login nejestvuje problem je na zaciatku metody getmymessages :D");
+            System.out.println("doesn't exist");
             return null;
         }
 
@@ -188,15 +188,15 @@ public class Database {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
-                String odKOHO = rs.getString("fromWHO");
-                String textSPRAVY = rs.getString("what");
+                String fromWho = rs.getString("from who");
+                String textMess = rs.getString("what");
                 //DateTimeFormatter = rs.getDate("timeWHEN");
                 //Time casOdoslania  = rs.getDate("timeWHEN");
-                Date casOdoslania = rs.getDate("timeWHEN");
+                Date time = rs.getDate("when");
 
 
                 // System.out.println(odKOHO +  " \"" + textSPRAVY + "\" " + casOdoslania);
-                Message sprava = new Message(odKOHO,textSPRAVY,casOdoslania);
+                Message sprava = new Message(fromWho,textMess,time);
                 messeges.add(sprava);
 
             }
@@ -210,12 +210,12 @@ public class Database {
 
     public void deleteAllMyMessages(String login){
 
-        int Idecko = getUserId(login);
+        int ID = getUserId(login);
 
         try {
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement( deleteMyMessages );
-            ps.setInt(1,Idecko);
+            ps.setInt(1,ID);
             ResultSet rs = ps.executeQuery();
 
 
@@ -228,7 +228,6 @@ public class Database {
 
 
     public boolean changePassword(String login , String oldPassword, String newPassword){
-        // o chvíľku spravím... no idem najprv spinkať
         return false;
     }
 }
