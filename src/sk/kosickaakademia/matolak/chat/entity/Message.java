@@ -3,7 +3,7 @@ package sk.kosickaakademia.matolak.chat.entity;
 import java.util.Date;
 
 public class Message {
-    private int id;
+    private int idm;
 
     public Message(String sender, String text, Date date) {
         this.sender = sender;
@@ -16,8 +16,8 @@ public class Message {
     private Date date;
     private String text;
 
-    public Message(int id, String sender, String receiver, Date date, String text) {
-        this.id = id;
+    public Message(int idm, String sender, String receiver, Date date, String text) {
+        this.idm = idm;
         this.sender = sender;
         this.receiver = receiver;
         this.date = date;
@@ -25,7 +25,7 @@ public class Message {
     }
 
     public int getId() {
-        return id;
+        return idm;
     }
 
     public String getSender() {
