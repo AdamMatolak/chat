@@ -18,8 +18,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        //launch(args);
-        //new Database().test();
         Database db=new Database();
         db.insertNewUser("Adam","heslo");
         db.loginUser("Adam","heslo");
