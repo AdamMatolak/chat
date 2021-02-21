@@ -3,44 +3,36 @@ package sk.kosickaakademia.matolak.chat.entity;
 import java.util.Date;
 
 public class Message {
-    private int idm;
-
-    public Message(String sender, String text, Date date) {
-        this.sender = sender;
-        this.date = date;
-        this.text = text;
-    }
-
-    private String sender;
-    private String receiver;
+    private int idMsg;
+    private String from;
+    private String to;
     private Date date;
-    private String text;
+    private String msg;
 
-    public Message(int idm, String sender, String receiver, Date date, String text) {
-        this.idm = idm;
-        this.sender = sender;
-        this.receiver = receiver;
+    public Message(int idMsg, String from, String to, Date date, String msg) {
+        this.idMsg = this.idMsg;
+        this.from = from;
+        this.to = to;
         this.date = date;
-        this.text = text;
+        this.msg = msg;
     }
-
     public int getId() {
-        return idm;
+        return idMsg;
     }
 
-    public String getSender() {
-        return sender;
+    public String getFrom() {
+        return from;
     }
 
-    public String getReceiver() {
-        return receiver;
+    public String getTo() {
+        return to;
     }
 
-    public Date getDate() {
+    public Date getDt() {
         return date;
     }
 
     public String getText() {
-        return text;
+        return msg;
     }
 }

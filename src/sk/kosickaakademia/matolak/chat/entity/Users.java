@@ -1,8 +1,11 @@
 package sk.kosickaakademia.matolak.chat.entity;
 
-public class User {
+public class Users {
+    private int id;
+    private String login;
+    private String password;
 
-    public User(int id, String login, String password) {
+    public Users(int id, String login, String password) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -19,8 +22,4 @@ public class User {
     public String getPassword() {
         return password;
     }
-
-    private int id;
-    private String login;
-    private  String password;
 }
