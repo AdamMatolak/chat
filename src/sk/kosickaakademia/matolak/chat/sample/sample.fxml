@@ -2,16 +2,18 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.kosickaakademia.matolak.chat.sample.Controller">
    <children>
-      <Label layoutX="69.0" layoutY="64.0" text="Login : ">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#313436" height="300.0" stroke="BLACK" strokeType="INSIDE" width="500.0" />
+      <Label layoutX="105.0" layoutY="64.0" text="Login : " textFill="WHITE">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <Label layoutX="61.0" layoutY="128.0" text="Password : ">
+      <Label layoutX="61.0" layoutY="128.0" text="Password : " textFill="WHITE">
          <font>
             <Font size="26.0" />
          </font>

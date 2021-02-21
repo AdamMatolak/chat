@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.kosickaakademia.matolak.chat.sample.ChatController">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000b0" height="564.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#313436" height="564.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="40.0" layoutX="19.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="199.0" />
         <Label layoutX="31.0" layoutY="16.0" prefHeight="25.0" prefWidth="105.0" text="Logged as:">
             <font>
